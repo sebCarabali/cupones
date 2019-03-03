@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Persona;
+use App\Cliente;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -61,24 +62,19 @@ class RegisterController extends Controller
      *
      * @param  array  $data
      */
-    protected function create(Request $req)
+    protected function create(array $req)
     {
-        /**
-        $this->validate($req, [
-            'nombre' => ['required', 'string', 'max:255'],
-            'apellido' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:personas'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-         */
+        $cliente = new Cliente();
 
-        return Persona::create([
-            'nombre' => $req->get('nombre'),
-            'apellido' => $req->get('apellido'),
-            'email' => $req->get('email'),
-            'password' => Hash::make($req->get('password')),
-        ]);
+        $persona = new Persona();
+        $persona->nombre = $req['nombre'];
+        $persona->apellido = $req['apellido'];
+        $persona->email = $req['email'];
+        $persona->password = Hash::make($req['password']);
 
-        return redirect('/');
+        $persona->save();
+        $persona->cliente()->save($cliente);
+
+        return $persona;
     }
 }

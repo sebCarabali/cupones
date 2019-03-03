@@ -88,7 +88,7 @@
                                 @endif
                                 @else
                                 <li>
-                                Bienvenid@ {{ Auth::user()->nombre }}
+                                Bienvenido(a) {{ Auth::user()->nombre }}
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                     <i class="fa fa-power-off"></i>{{ __('Cerrar sesión') }}
@@ -113,23 +113,19 @@
                         <nav>
                             <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
                                 <li class="active"><a href="/">Home</a></li>
-                                <li><a href="#">Admin</a></li>
+                                @auth
+                                    <!-- 
+                                    @if(Auth::user()->cliente != null)
+                                    <li>
+                                        <a href="#">Es un cliente</a>
+                                    </li>
+                                    @endif
+                                    -->
+                                    <li><a href="#">Admin</a></li>
+                                @endauth
                             </ul>
                         </nav>
                     </div>
-                    <!--
-                    <div class="col-md-6">
-                        <div class="pull-right">
-                            <div class="header-search-bar">
-                                <label>Search</label>
-                                <input type="text" placeholder="Glasses, Shoes, ect" />
-                                <button><i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            -->
                 </div>
         </header>
 

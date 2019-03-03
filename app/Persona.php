@@ -29,4 +29,9 @@ class Persona extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
+    public function cliente()
+    {
+        return $this->hasOne('App\Cliente', 'id_persona');
+    }
 }
