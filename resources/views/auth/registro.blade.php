@@ -1,5 +1,5 @@
 @section('titulo', 'Registro de usuario')
-@extends('layout')
+@extends('layouts.master')
 
 @section('contenido')
 <div class="container">
@@ -12,7 +12,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-6">
-                    <form action="{{ route('registro') }}" method="post">
+                    <form action="{{ route('register') }}" method="post">
 
                         @foreach ($errors->all() as $error)
                         <p class="alert alert-danger">{{ $error }}</p>
@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Apellido</label>
-                            <input type="text" name="apellido" required placeholder="Perez" class="form-control" value="{{ old('apeliido') }}">
+                            <input type="text" name="apellido" required placeholder="Perez" class="form-control" value="{{ old('apellido') }}">
                         </div>
                         <div class="form-group">
                             <label for="">E-mail</label>

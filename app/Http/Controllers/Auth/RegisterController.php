@@ -31,6 +31,11 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
+
+    public function showRegistrationForm()
+    {
+        return view('auth.registro');
+    }
     /**
      * Create a new controller instance.
      *
@@ -41,6 +46,16 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function validator($data)
+    {
+        return Validator::make($data,  [
+            'nombre' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:personas'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -48,12 +63,14 @@ class RegisterController extends Controller
      */
     protected function create(Request $req)
     {
+        /**
         $this->validate($req, [
             'nombre' => ['required', 'string', 'max:255'],
             'apellido' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:personas'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+         */
 
         return Persona::create([
             'nombre' => $req->get('nombre'),

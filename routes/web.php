@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('inicio');
 });
 
+Auth::routes();
 
-Route::get('usuarios/login', 'LoginController@doLogin');
-Route::get('usuarios/registro', 'RegistroController@create');
-Route::post('usuarios/registro', 'RegistroController@doRegistro')->name('registro');
+Route::get('/home', 'HomeController@index')->name('home');

@@ -49,8 +49,8 @@
                     <div class="col-md-6 col-md-offset-4">
                         <div class="pull-right">
                             <ul class="login-register">
-                                @auth
-                                    <!--
+
+                                <!--
                                     <li class="shopping-cart shopping-cart-white"><a href="page-cart.html"><i class="fa fa-shopping-cart"></i>My
                                             Cart</a>
                                         <div class="shopping-cart-box">
@@ -77,16 +77,28 @@
                                             </ul>
                                         </div>
                                     </li> -->
+                                @guest
+                                <li>
+                                    <a href="{{ route('login') }}"><i class="fa fa-sign-in"></i>{{ __('Ingresar') }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                <li>
+                                    <a href="{{ route('register') }}"><i class="fa fa-edit"></i>{{ __('Registar') }}</a>
+                                </li>
+                                @endif
                                 @else
-                                    <li>
-                                        <a href="/usuarios/login">
-                                            <i class="fa fa-sign-in"></i> Ingresar
-                                        </a>
-                                    </li>
-                                    <li><a href="/usuarios/registro"><i
-                                                class="fa fa-edit"></i>Registrarse</a>
-                                    </li>
-                                @endauth
+                                <li>
+                                Bienvenid@ {{ Auth::user()->nombre }}
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-power-off"></i>{{ __('Cerrar sesión') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                </li>
+                                @endguest
                             </ul>
                         </div>
                     </div>
@@ -118,7 +130,7 @@
                     </div>
                 </div>
             -->
-            </div>
+                </div>
         </header>
 
         <div class="gap"></div>
@@ -716,4 +728,4 @@
     </div>
 </body>
 
-</html>s
+</html>

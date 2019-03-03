@@ -1857,6 +1857,20 @@ body.boxed footer.main .footer-copyright {
 .top-main-area.top-main-area-dark .login-register > li > a {
   color: #d9d9d9;
 }
+
+.top-main-area .login-register > form > li > a {
+  height: 32px;
+  line-height: 32px;
+  color: #6e6e6e;
+  font-size: 12px;
+}
+.top-main-area.top-main-area-dark .login-register > form > li {
+  border-color: #4d4d4d;
+}
+.top-main-area.top-main-area-dark .login-register  > form > li > a {
+  color: #d9d9d9;
+}
+
 header.main {
   background: #333;
 }
