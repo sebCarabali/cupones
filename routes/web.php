@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('inicio');
 });
+
+
+Route::get('usuarios/login', 'LoginController@doLogin');
+Route::get('usuarios/registro', 'RegistroController@create');
+Route::post('usuarios/registro', 'RegistroController@doRegistro')->name('registro');

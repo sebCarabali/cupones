@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>themelot.net - Couponia - Index shop layout 4</title>
+    <title>@yield('titulo')</title>
     <!-- meta info -->
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="keywords" content="Koupon HTML5 Template" />
@@ -13,23 +13,23 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
     <!-- Bootstrap styles -->
-    <link rel="stylesheet" href="css/boostrap.css">
+    <link rel="stylesheet" href="/css/boostrap.css">
     <!-- Font Awesome styles (icons) -->
-    <link rel="stylesheet" href="css/font_awesome.css">
+    <link rel="stylesheet" href="/css/font_awesome.css">
     <!-- Main Template styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <!-- IE 8 Fallback -->
     <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="css/ie.css" />
 <![endif]-->
 
     <!-- Your custom styles (blank file) -->
-    <link rel="stylesheet" href="css/mystyles.css">
+    <link rel="stylesheet" href="/css/mystyles.css">
 
 
 </head>
 
-<body class="boxed" style="background-image: url(img/textures/wood-1.jpg)">
+<body class="boxed" style="background-image: url(/img/textures/wood-1.jpg)">
 
 
     <div class="global-wrap">
@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <a href="index.html" class="logo mt5">
-                            <img src="img/logo-small-dark.png" alt="Image Alternative text" title="Image Title" />
+                            <img src="/img/logo-small-dark.png" alt="Image Alternative text" title="Image Title" />
                         </a>
                     </div>
                     <div class="col-md-6 col-md-offset-4">
@@ -79,11 +79,11 @@
                                     </li> -->
                                 @else
                                     <li>
-                                        <a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top">
+                                        <a href="/usuarios/login">
                                             <i class="fa fa-sign-in"></i> Ingresar
                                         </a>
                                     </li>
-                                    <li><a class="popup-text" href="#register-dialog" data-effect="mfp-move-from-top"><i
+                                    <li><a href="/usuarios/registro"><i
                                                 class="fa fa-edit"></i>Registrarse</a>
                                     </li>
                                 @endauth
@@ -120,95 +120,6 @@
             -->
             </div>
         </header>
-        <!-- LOGIN REGISTER LINKS CONTENT -->
-        <div id="login-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
-            <i class="fa fa-sign-in dialog-icon"></i>
-            <h3>Member Login</h3>
-            <h5>Welcome back, friend. Login to get started</h5>
-            <form class="dialog-form">
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="text" placeholder="email@domain.com" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="My secret password" class="form-control">
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox">Remember me
-                    </label>
-                </div>
-                <input type="submit" value="Sign in" class="btn btn-primary">
-            </form>
-            <ul class="dialog-alt-links">
-                <li><a class="popup-text" href="#register-dialog" data-effect="mfp-zoom-out">Not member yet</a>
-                </li>
-                <li><a class="popup-text" href="#password-recover-dialog" data-effect="mfp-zoom-out">Forgot password</a>
-                </li>
-            </ul>
-        </div>
-
-
-        <div id="register-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
-            <i class="fa fa-edit dialog-icon"></i>
-            <h3>Member Register</h3>
-            <h5>Ready to get best offers? Let's get started!</h5>
-            <form class="dialog-form">
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="text" placeholder="email@domain.com" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="My secret password" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Repeat Password</label>
-                    <input type="password" placeholder="Type your password again" class="form-control">
-                </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="form-group">
-                            <label>Your Area</label>
-                            <input type="password" placeholder="Boston" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Postal/Zip</label>
-                            <input type="password" placeholder="12345" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox">Get hot offers via e-mail
-                    </label>
-                </div>
-                <input type="submit" value="Sign up" class="btn btn-primary">
-            </form>
-            <ul class="dialog-alt-links">
-                <li><a class="popup-text" href="#login-dialog" data-effect="mfp-zoom-out">Already member</a>
-                </li>
-            </ul>
-        </div>
-
-
-        <div id="password-recover-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
-            <i class="icon-retweet dialog-icon"></i>
-            <h3>Password Recovery</h3>
-            <h5>Fortgot your password? Don't worry we can deal with it</h5>
-            <form class="dialog-form">
-                <label>E-mail</label>
-                <input type="text" placeholder="email@domain.com" class="span12">
-                <input type="submit" value="Request new password" class="btn btn-primary">
-            </form>
-        </div>
-        <!-- END LOGIN REGISTER LINKS CONTENT -->
-
-
-
 
         <div class="gap"></div>
 
@@ -222,8 +133,8 @@
 	//////////////PAGE CONTENT///////////// 
 	////////////////////////////////////-->
 
-
-
+        @yield('contenido')
+        <!--
         <div class="container">
             <h2>Últimos cupones</h2>
             <div class="row row-wrap">
@@ -636,7 +547,7 @@
             </div>
             <div class="gap"></div>
         </div>
-
+    -->
 
         <!-- //////////////////////////////////
 	//////////////END PAGE CONTENT///////// 
@@ -783,25 +694,25 @@
 
 
         <!-- Scripts queries -->
-        <script src="js/jquery.js"></script>
-        <script src="js/boostrap.min.js"></script>
-        <script src="js/countdown.min.js"></script>
-        <script src="js/flexnav.min.js"></script>
-        <script src="js/magnific.js"></script>
-        <script src="js/tweet.min.js"></script>
+        <script src="/js/jquery.js"></script>
+        <script src="/js/boostrap.min.js"></script>
+        <script src="/js/countdown.min.js"></script>
+        <script src="/js/flexnav.min.js"></script>
+        <script src="/js/magnific.js"></script>
+        <script src="/js/tweet.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-        <script src="js/fitvids.min.js"></script>
-        <script src="js/mail.min.js"></script>
-        <script src="js/ionrangeslider.js"></script>
-        <script src="js/icheck.js"></script>
-        <script src="js/fotorama.js"></script>
-        <script src="js/card-payment.js"></script>
-        <script src="js/owl-carousel.js"></script>
-        <script src="js/masonry.js"></script>
-        <script src="js/nicescroll.js"></script>
+        <script src="/js/fitvids.min.js"></script>
+        <script src="/js/mail.min.js"></script>
+        <script src="/js/ionrangeslider.js"></script>
+        <script src="/js/icheck.js"></script>
+        <script src="/js/fotorama.js"></script>
+        <script src="/js/card-payment.js"></script>
+        <script src="/js/owl-carousel.js"></script>
+        <script src="/js/masonry.js"></script>
+        <script src="/js/nicescroll.js"></script>
 
         <!-- Custom scripts -->
-        <script src="js/custom.js"></script>
+        <script src="/js/custom.js"></script>
     </div>
 </body>
 
