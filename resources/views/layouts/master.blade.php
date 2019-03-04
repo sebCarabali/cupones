@@ -88,15 +88,15 @@
                                 @endif
                                 @else
                                 <li>
-                                Bienvenido(a) {{ Auth::user()->nombre }}
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    Bienvenido(a) {{ Auth::user()->nombre }}
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                    <i class="fa fa-power-off"></i>{{ __('Cerrar sesión') }}
-                                </a>
+                                        <i class="fa fa-power-off"></i>{{ __('Cerrar sesión') }}
+                                    </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </li>
                                 @endguest
                             </ul>
@@ -112,16 +112,18 @@
                         <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                         <nav>
                             <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
-                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/">Inicio</a></li>
                                 @auth
-                                    <!-- 
+                                <!-- 
                                     @if(Auth::user()->cliente != null)
                                     <li>
                                         <a href="#">Es un cliente</a>
                                     </li>
                                     @endif
                                     -->
-                                    <li><a href="#">Admin</a></li>
+                                @if(Auth::user()->administrador != null)
+                                <li><a href="{{ route('aliados.index') }}">Administrar aliados</a></li>
+                                @endif
                                 @endauth
                             </ul>
                         </nav>
@@ -140,7 +142,6 @@
         <!-- //////////////////////////////////
 	//////////////PAGE CONTENT///////////// 
 	////////////////////////////////////-->
-
         @yield('contenido')
         <!--
         <div class="container">

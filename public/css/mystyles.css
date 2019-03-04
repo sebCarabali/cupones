@@ -1,1 +1,15 @@
 /*YOUR CUSTOM STYLES*/
+
+.frm {
+    background-color: #fff;
+}
+
+.frm-header {
+    padding:10px;
+    font-size: 1.5em;
+    border-bottom: 1px  solid #ccc;
+}
+
+.frm-body {
+    padding: 10px;
+}

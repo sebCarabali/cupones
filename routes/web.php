@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/aliados/index', 'AliadosController@index')->name('aliados.index');
+Route::get('/aliados/new', 'AliadosController@showFrmRegistro')->name('aliados.new');
+Route::post('/aliados/new', 'AliadosController@doRegistro')->name('aliados.new');
+Route::get('/aliados/edit/{id}', 'AliadosController@showFrmEditar')->name('aliados.edit');
