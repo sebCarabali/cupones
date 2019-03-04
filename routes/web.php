@@ -22,3 +22,5 @@ Route::get('/aliados/index', 'AliadosController@index')->name('aliados.index');
 Route::get('/aliados/new', 'AliadosController@showFrmRegistro')->name('aliados.new');
 Route::post('/aliados/new', 'AliadosController@doRegistro')->name('aliados.new');
 Route::get('/aliados/edit/{id}', 'AliadosController@showFrmEditar')->name('aliados.edit');
+Route::post('/aliados/edit', 'AliadosController@doEditar')->name('aliados.doedit');
+Route::post('/aliados/eliminar/{id}', 'AliadosController@doEliminar')->name('aliados.doeliminar');

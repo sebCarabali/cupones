@@ -68,7 +68,8 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="descripcion">Descripcion</label>
-                                <textarea name="descripcion" id="descripcion" required cols="30" placeholder="Escribe alfo sobre el aliado." rows="10" class="form-control"></textarea>
+                                <textarea name="descripcion" id="descripcion" required cols="30" placeholder="Escribe alfo sobre el aliado."
+                                    rows="10" class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="form-row">
