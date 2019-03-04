@@ -18,9 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/aliados/index', 'AliadosController@index')->name('aliados.index');
-Route::get('/aliados/new', 'AliadosController@showFrmRegistro')->name('aliados.new');
-Route::post('/aliados/new', 'AliadosController@doRegistro')->name('aliados.new');
-Route::get('/aliados/edit/{id}', 'AliadosController@showFrmEditar')->name('aliados.edit');
-Route::post('/aliados/edit', 'AliadosController@doEditar')->name('aliados.doedit');
-Route::post('/aliados/eliminar/{id}', 'AliadosController@doEliminar')->name('aliados.doeliminar');
+
+# Aliados
+Route::get('/aliados/index', 'Admin\AliadosController@index')->name('aliados.index');
+Route::get('/aliados/new', 'Admin\AliadosController@showFrmRegistro')->name('aliados.new');
+Route::post('/aliados/new', 'Admin\AliadosController@doRegistro')->name('aliados.new');
+Route::get('/aliados/edit/{id}', 'Admin\AliadosController@showFrmEditar')->name('aliados.edit');
+Route::post('/aliados/edit', 'Admin\AliadosController@doEditar')->name('aliados.doedit');
+Route::post('/aliados/eliminar/{id}', 'Admin\AliadosController@doEliminar')->name('aliados.doeliminar');
+
+# Diseñadores
+Route::get('/disenador/index', 'Admin\DisenadorController@index')->name('admin.disenador.index');
+Route::get('/disenador/new', 'Admin\DisenadorController@showFrmRegistro')->name('admin.disenador.new');
+Route::post('/disenador/new', 'Admin\DisenadorController@doRegistro')->name('admin.disenador.new');

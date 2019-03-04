@@ -64,14 +64,14 @@ Administrar aliados
                                 </li>
                             -->
                             </ul>
-                            <a class="btn btn-block btn-primary" href="{!! action('AliadosController@showFrmEditar', $aliado->id) !!}"><i
+                            <a class="btn btn-block btn-primary" href="{!! action('Admin\AliadosController@showFrmEditar', $aliado->id) !!}"><i
                                     class="fa fa-edit"></i> Editar</a>
-                            <a class="btn btn-block btn-danger" href="{{ action('AliadosController@doEliminar', $aliado->id) }}" onclick="event.preventDefault();
+                            <a class="btn btn-block btn-danger" href="{{ action('Admin\AliadosController@doEliminar', $aliado->id) }}" onclick="event.preventDefault();
                                     document.getElementById('eliminar-form').submit();">
                                 <i class="fa fa-times"></i> {{ __('Eliminar') }}
                             </a>
 
-                            <form id="eliminar-form" action="{{ action('AliadosController@doEliminar', $aliado->id) }}" method="POST" style="display: none;">
+                            <form id="eliminar-form" action="{{ action('Admin\AliadosController@doEliminar', $aliado->id) }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>

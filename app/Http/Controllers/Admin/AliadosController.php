@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\AliadoFormRequest;
 use App\Aliado;
+use App\Http\Controllers\Controller;
 
 class AliadosController extends Controller
 {
@@ -24,7 +26,7 @@ class AliadosController extends Controller
         return view('admin.aliado.new');
     }
 
-    public function doRegistro(Request $request)
+    public function doRegistro(AliadoFormRequest $request)
     {
         $aliado = new Aliado($request->all());
         $aliado->save();
@@ -37,7 +39,7 @@ class AliadosController extends Controller
         return view('admin.aliado.edit')->with(compact('aliado'));
     }
 
-    public function doEditar(Request $req)
+    public function doEditar(AliadoFormRequest $req)
     {
         $aliado = Aliado::find($req->get('id'));
         $aliado->nombre = $req->get('nombre');

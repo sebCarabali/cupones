@@ -21,28 +21,37 @@
                 Registrar nuevo aliado
             </div>
             <div class="frm-body">
-            <form action="{{ route('aliados.doedit') }}" method="post">
+                <form action="{{ route('aliados.doedit') }}" method="post">
+
+                    @foreach ($errors->all() as $err)
+                    <p class="alert alert-danger">
+                        {{ $err }}
+                    </p>
+                    @endforeach
                     @csrf
-                <input type="hidden" name="id" value="{{ $aliado->id }}">
+                    <input type="hidden" name="id" value="{{ $aliado->id }}">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="nombre">Nombre</label>
-                        <input type="text" required class="form-control" name="nombre" id="nombre" placeholder="Tu Nombre" value="{{ $aliado->nombre }}">
+                            <input type="text" required class="form-control" name="nombre" id="nombre" placeholder="Tu Nombre"
+                                value="{{ $aliado->nombre }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="direccion">Direccion</label>
                             <input type="text" required class="form-control" name="direccion" id="direccion"
-                        placeholder="Tu direccion" value="{{ $aliado->direccion }}">
+                                placeholder="Tu direccion" value="{{ $aliado->direccion }}">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="sitio_web">Sitio web</label>
-                            <input type="url" class="form-control" name="sitio_web" id="sitio_web" placeholder="wwww.misitioweb.com" value="{{ $aliado->sitio_web }}">
+                            <input type="url" class="form-control" name="sitio_web" id="sitio_web" placeholder="wwww.misitioweb.com"
+                                value="{{ $aliado->sitio_web }}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="telefono">telefono</label>
-                            <input type="phone" class="form-control" name="telefono" id="telefono" placeholder="+57 3045456751" value="{{ $aliado->telefono }}">
+                            <input type="phone" class="form-control" name="telefono" id="telefono" placeholder="+57 3045456751"
+                                value="{{ $aliado->telefono }}">
                         </div>
                     </div>
                     <div class="form-row">

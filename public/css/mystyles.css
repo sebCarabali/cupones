@@ -13,3 +13,17 @@
 .frm-body {
     padding: 10px;
 }
+
+.thead-dark {
+    background-color: #2a8fbd;;
+    color: #fff;
+}
+
+.tbody-dark {
+    background-color: #fff;
+}
+
+.thead-dark > tr > th,
+.tbody-dark > tr > td{
+    text-align: center;
+}

@@ -22,54 +22,63 @@
                     Registrar nuevo aliado
                 </div>
                 <div class="frm-body">
-                    <form action="" method="post">
+                    <form action="{{ route('aliados.new') }}" method="post">
+                        @foreach ($errors->all() as $err)
+                        <p class="alert alert-danger">
+                            {{ $err }}
+                        </p>
+                        @endforeach
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" required class="form-control" name="nombre" id="nombre" placeholder="Tu Nombre">
+                                <input type="text" required class="form-control" name="nombre" id="nombre" placeholder="Tu Nombre"
+                                    value="{{ old('nombre') }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="direccion">Direccion</label>
                                 <input type="text" required class="form-control" name="direccion" id="direccion"
-                                    placeholder="Tu direccion">
+                                    placeholder="Tu direccion" value="{{ old('direccion') }}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="sitio_web">Sitio web</label>
-                                <input type="url" class="form-control" name="sitio_web" id="sitio_web" placeholder="wwww.misitioweb.com">
+                                <input type="url" class="form-control" name="sitio_web" id="sitio_web" placeholder="wwww.misitioweb.com"
+                                    value="{{ old('sitio_web') }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="telefono">telefono</label>
-                                <input type="phone" class="form-control" name="telefono" id="telefono" placeholder="+57 3045456751">
+                                <input type="phone" class="form-control" name="telefono" id="telefono" placeholder="+57 3045456751"
+                                    value="{{ old('telefono') }}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="facebook">Facebook</label>
-                                <input type="url" class="form-control" name="facebook" placeholder="Facebook">
+                                <input type="url" class="form-control" name="facebook" placeholder="Facebook" value="{{ old('facebook') }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="twitter">Twitter</label>
-                                <input class="form-control" name="twitter" placeholder="Twitter" type="url">
+                                <input class="form-control" name="twitter" placeholder="Twitter" type="url" value="{{ old('twitter') }}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="instagram">Instagram</label>
-                                <input type="url" class="form-control" name="instagram" placeholder="Instagram">
+                                <input type="url" class="form-control" name="instagram" placeholder="Instagram" value="{{ old('instagram') }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="email">Email</label>
-                                <input class="form-control" name="email" placeholder="email@host.com" type="email">
+                                <input class="form-control" name="email" placeholder="email@host.com" type="email"
+                                    value="{{ old('email') }}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="descripcion">Descripcion</label>
                                 <textarea name="descripcion" id="descripcion" required cols="30" placeholder="Escribe alfo sobre el aliado."
-                                    rows="10" class="form-control"></textarea>
+                                    rows="10" class="form-control">{{ old('descripcion') }}"</textarea>
                             </div>
                         </div>
                         <div class="form-row">

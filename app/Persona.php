@@ -39,4 +39,9 @@ class Persona extends Authenticatable
     {
         return $this->hasOne('App\Administrador', 'id_persona');
     }
+
+    public function disenador()
+    {
+        return $this->hasOne('App\Disenador', 'id_persona');
+    }
 }

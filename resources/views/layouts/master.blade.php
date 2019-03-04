@@ -123,6 +123,7 @@
                                     -->
                                 @if(Auth::user()->administrador != null)
                                 <li><a href="{{ route('aliados.index') }}">Administrar aliados</a></li>
+                                <li><a href="{{ route('admin.disenador.index') }}">Administrar diseñadores</a></li>
                                 @endif
                                 @endauth
                             </ul>
