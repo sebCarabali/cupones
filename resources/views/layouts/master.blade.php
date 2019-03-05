@@ -15,7 +15,8 @@
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="/css/boostrap.css">
     <!-- Font Awesome styles (icons) -->
-    <link rel="stylesheet" href="/css/font_awesome.css">
+    <!--<link rel="stylesheet" href="/css/font_awesome.css">-->
+    <link rel="stylesheet" href="/css/all.css">
     <!-- Main Template styles -->
     <link rel="stylesheet" href="/css/styles.css">
     <!-- IE 8 Fallback -->
@@ -79,11 +80,11 @@
                                     </li> -->
                                 @guest
                                 <li>
-                                    <a href="{{ route('login') }}"><i class="fa fa-sign-in"></i>{{ __('Ingresar') }}</a>
+                                    <a href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i>  {{ __('Ingresar') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                 <li>
-                                    <a href="{{ route('register') }}"><i class="fa fa-edit"></i>{{ __('Registar') }}</a>
+                                    <a href="{{ route('register') }}"><i class="fa fa-user-plus"></i>  {{ __('Registar') }}</a>
                                 </li>
                                 @endif
                                 @else
@@ -91,7 +92,7 @@
                                     Bienvenido(a) {{ Auth::user()->nombre }}
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-power-off"></i>{{ __('Cerrar sesión') }}
+                                        <i class="fa fa-power-off"></i> {{ __('Cerrar sesión') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -720,6 +721,7 @@
         <script src="/js/owl-carousel.js"></script>
         <script src="/js/masonry.js"></script>
         <script src="/js/nicescroll.js"></script>
+        <script src="/js/all.js"></script>
 
         <!-- Custom scripts -->
         <script src="/js/custom.js"></script>

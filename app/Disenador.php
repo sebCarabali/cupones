@@ -14,4 +14,9 @@ class Disenador extends Model
     {
         return $this->belongsTo('App\Persona');
     }
+
+    public function aliados()
+    {
+        return $this->belongsToMany('App\Aliado', 'aliado_disenador', 'id_disenador', 'id_aliado');
+    }
 }

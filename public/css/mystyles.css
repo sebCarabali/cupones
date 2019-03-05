@@ -27,3 +27,7 @@
 .tbody-dark > tr > td{
     text-align: center;
 }
+
+.bordered {
+    border-radius: 7px;
+}

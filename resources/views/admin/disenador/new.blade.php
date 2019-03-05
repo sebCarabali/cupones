@@ -48,6 +48,17 @@
                                     value="{{ old('email') }}">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="aliados" class="col-md-2">Aliados</label>
+                            <select name="aliados[]" multiple id="aliados" class="form-control">
+                                @foreach ($aliados as $aliado)
+                                <option value="{{ $aliado->id }}">
+                                    {{ $aliado->nombre }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <button class="btn btn-danger" type="reset">Cancelar</button>

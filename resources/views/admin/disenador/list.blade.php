@@ -19,6 +19,11 @@ Administrar aliados
         </aside>
     </div>
     <div class="col-md-9">
+        @if (session('status'))
+            <p class="alert alert-success">
+                {{ session('status') }}
+            </p>
+        @endif
         <div class="row row-wrap">
             <table class="table">
                 <thead class="thead-dark">
@@ -46,7 +51,9 @@ Administrar aliados
                             <td>
                                 {{ $disenador->email }}
                             </td>
-                            <td></td>
+                            <td>
+                                <a href="{{ action('Admin\DisenadorController@showFrmEditar', $disenador->disenador->id) }}"><i class="fa fa-edit"></i> Editar</a>
+                            </td>
                         </tr>
                     @endforeach
                     @endif

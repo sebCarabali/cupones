@@ -31,3 +31,5 @@ Route::post('/aliados/eliminar/{id}', 'Admin\AliadosController@doEliminar')->nam
 Route::get('/disenador/index', 'Admin\DisenadorController@index')->name('admin.disenador.index');
 Route::get('/disenador/new', 'Admin\DisenadorController@showFrmRegistro')->name('admin.disenador.new');
 Route::post('/disenador/new', 'Admin\DisenadorController@doRegistro')->name('admin.disenador.new');
+Route::get('/disenador/editar/{id}', 'Admin\DisenadorController@showFrmEditar');
+Route::post('/disenador/editar/{id}', 'Admin\DisenadorController@doEditar');
