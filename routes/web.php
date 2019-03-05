@@ -33,3 +33,10 @@ Route::get('/disenador/new', 'Admin\DisenadorController@showFrmRegistro')->name(
 Route::post('/disenador/new', 'Admin\DisenadorController@doRegistro')->name('admin.disenador.new');
 Route::get('/disenador/editar/{id}', 'Admin\DisenadorController@showFrmEditar');
 Route::post('/disenador/editar/{id}', 'Admin\DisenadorController@doEditar');
+
+#Cupones
+Route::get('/cupon/index', 'Admin\CuponController@index')->name('admin.cupon.index');
+Route::get('/cupon/new', 'Admin\CuponController@showFrmCupones')->name('admin.cupon.new');
+Route::post('/cupon/new', 'Admin\CuponController@Registro')->name('admin.cupon.new');
+Route::post('/cupon/editar/{caducidad}', 'Admin\CuponController@showFrmEditar');
+Route::post('/cupon/editar/{caducidad}', 'Admin\CuponController@doEditar');
