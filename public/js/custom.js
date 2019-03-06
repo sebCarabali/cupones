@@ -23,6 +23,8 @@ $(function() {
     });
 });
 
+$('.datepicker').datepicker();
+
 
 // Bootstrap carousel
 $('.carousel').carousel({

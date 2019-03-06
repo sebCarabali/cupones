@@ -109,10 +109,10 @@
         <header class="main main-color">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                         <nav>
-                            <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
+                            <ul class="nav nav-pills flexnav" id="flexnav" >
                                 <li><a href="/">Inicio</a></li>
                                 @auth
                                 <!-- 
@@ -126,6 +126,7 @@
                                 <li><a href="{{ route('aliados.index') }}">Administrar aliados</a></li>
                                 <li><a href="{{ route('admin.disenador.index') }}">Administrar diseñadores</a></li>
                                 <li><a href="{{ route('admin.categoria.index') }}">Administrar categorias</a></li>
+                                <li><a href="{{ route('admin.cupon.index') }}">Administrar cupones</a></li>
                                 @endif
                                 @endauth
                             </ul>

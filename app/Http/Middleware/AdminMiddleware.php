@@ -17,6 +17,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if($request->user() == null) {
+            return redirect('/login');
+        }
+
         if($request->user()->administrador == null){
             return new Response(view('auth.unauthorized')->with('role', 'ADMIN')); 
         }

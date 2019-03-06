@@ -10,5 +10,13 @@ class Cupon extends Model
     public $guarded = ['id'];
     public $timestamps = false;
 
-    public 
+    public function categoria()
+    {
+        return $this->belongsTo('App\Categoria', 'id_categoria');
+    }
+
+    public function aliado()
+    {
+        return $this->belongsTo('App\Aliado', 'id_aliado');
+    }
 }
