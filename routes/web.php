@@ -35,9 +35,16 @@ Route::get('/disenador/editar/{id}', 'Admin\DisenadorController@showFrmEditar');
 Route::post('/disenador/editar/{id}', 'Admin\DisenadorController@doEditar');
 
 # Categorias
-
 Route::get('/admin/categorias', 'Admin\CategoriaController@index')->name('admin.categoria.index');
 Route::get('/admin/categorias/new', 'Admin\CategoriaController@showFrmRegistrar')->name('admin.categoria.new');
 Route::post('/admin/categorias/new', 'Admin\CategoriaController@doRegistrar');
 Route::get('/admin/categorias/edit/{id}', 'Admin\CategoriaController@showFrmEditar');
 Route::post('/admin/categorias/edit/{id}', 'Admin\CategoriaController@doEditar')->name('admin.categoria.edit');
+
+#Cupones
+Route::get('/cupon/index', 'Admin\CuponController@index')->name('admin.cupon.index');
+Route::get('/cupon/new', 'Admin\CuponController@showFrmCupones')->name('admin.cupon.new');
+Route::post('/cupon/new', 'Admin\CuponController@Registro')->name('admin.cupon.new');
+Route::post('/cupon/editar/{caducidad}', 'Admin\CuponController@showFrmEditar');
+Route::post('/cupon/editar/{caducidad}', 'Admin\CuponController@doEditar');
+
