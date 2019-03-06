@@ -59,6 +59,7 @@ Administrar aliados
                     @endif
                 </tbody>
             </table>
+            {!! $disenadores->render() !!}
         </div>
     </div>
 

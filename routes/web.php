@@ -33,3 +33,11 @@ Route::get('/disenador/new', 'Admin\DisenadorController@showFrmRegistro')->name(
 Route::post('/disenador/new', 'Admin\DisenadorController@doRegistro')->name('admin.disenador.new');
 Route::get('/disenador/editar/{id}', 'Admin\DisenadorController@showFrmEditar');
 Route::post('/disenador/editar/{id}', 'Admin\DisenadorController@doEditar');
+
+# Categorias
+
+Route::get('/admin/categorias', 'Admin\CategoriaController@index')->name('admin.categoria.index');
+Route::get('/admin/categorias/new', 'Admin\CategoriaController@showFrmRegistrar')->name('admin.categoria.new');
+Route::post('/admin/categorias/new', 'Admin\CategoriaController@doRegistrar');
+Route::get('/admin/categorias/edit/{id}', 'Admin\CategoriaController@showFrmEditar');
+Route::post('/admin/categorias/edit/{id}', 'Admin\CategoriaController@doEditar')->name('admin.categoria.edit');

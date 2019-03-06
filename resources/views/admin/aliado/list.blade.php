@@ -80,6 +80,9 @@ Administrar aliados
             </div>
             @endforeach
         </div>
+        <div class="row row-wrap">
+            {!! $aliados->render() !!}
+        </div>
     </div>
 
 </div>

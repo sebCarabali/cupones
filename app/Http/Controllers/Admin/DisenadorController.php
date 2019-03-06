@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Hash;
 
 class DisenadorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index()
     {
-        $disenadores = Persona::with('disenador')->has('disenador')->get();
+        $disenadores = Persona::with('disenador')->has('disenador')->paginate(10);
         return view('admin.disenador.list')->with(compact('disenadores'));
     }
 

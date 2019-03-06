@@ -24,7 +24,7 @@ class DisenadorUpdateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
         ];
     }
 }

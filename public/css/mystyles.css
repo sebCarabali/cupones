@@ -31,3 +31,8 @@
 .bordered {
     border-radius: 7px;
 }
+
+.frm-header {
+    background-color: #2a8fbd;
+    color: #fff;
+}
