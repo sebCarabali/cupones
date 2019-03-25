@@ -19,4 +19,9 @@ class Cupon extends Model
     {
         return $this->belongsTo('App\Aliado', 'id_aliado');
     }
+
+    public function compras()
+    {
+        return $this->belongsToMany('App\Compra', 'detallecompra', 'id_cupon');
+    }
 }

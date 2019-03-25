@@ -39,6 +39,7 @@ class CuponController extends Controller
         $cupon->descripcion = $request->get('descripcion');
         $cupon->condiciones = $request->get('condiciones');
         $cupon->porcentaje_descuento = $request->get('porcentaje_descuento');
+        $cupon->precio = $request->get('precio');
         $cupon->aliado()->associate($aliado);
         $cupon->categoria()->associate($categoria);
         $cupon->save();
@@ -55,8 +56,22 @@ class CuponController extends Controller
                 ->with(compact('cupon', 'aliados', 'categorias'));
     }
 
-    public function doEditar(Request $request)
+    public function doEditar(Request $request, $id)
     {
-        
+        $cupon = Cupon::whereId($id)->firstOrFail();
+        $categoria = Categoria::whereId($request->get('categoria'))->firstOrFail();
+        $aliado = Aliado::whereId($request->get('aliado'))->firstOrFail();
+        $cupon->titulo = $request->get('titulo');
+        $cupon->fecha_caducidad = $request->get('fecha_caducidad');
+        $cupon->cantidad = $request->get('cantidad');
+        $cupon->descripcion = $request->get('descripcion');
+        $cupon->condiciones = $request->get('condiciones');
+        $cupon->porcentaje_descuento = $request->get('porcentaje_descuento');
+        $cupon->precio = $request->get('precio');
+        $cupon->aliado()->associate($aliado);
+        $cupon->categoria()->associate($categoria);
+        $cupon->save();
+        return redirect(route('admin.cupon.index'))
+            ->with('status', 'se ha editado el cupón');
     }
 }

@@ -36,3 +36,83 @@
     background-color: #2a8fbd;
     color: #fff;
 }
+
+.descuento {
+    margin-top: 10px;
+    font-size: 1.5em;
+    background-color: #2a8fbd;
+    color: #fff;
+    border-radius: 100px;
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.descuento > span {
+    font-size: 2em;
+}
+
+/* Cupones */
+
+.cupon {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #fff;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    border-radius: 10px 5px 10px 5px;
+}
+
+.titulo-cupon {
+    font-weight: bold;
+}
+
+.descuento-cupon{
+    display: flex;
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.valor-descuento {
+    font-size: 1.5em;
+    background-color: #2a8fbd;
+    color: #fff;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+.caducidad-cupon {
+    color: #000;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+.precio-normal {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: #000;
+}
+
+.precio-descuento{
+    color: #000;
+    font-size: 1.9em;
+}
+
+.days-lelf {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.pay-form {
+    width: 40%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.titulo-pago {
+    color: #fff;
+}

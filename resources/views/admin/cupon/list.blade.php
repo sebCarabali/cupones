@@ -29,6 +29,7 @@ Categorias
                         <th scope="col">Vence</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Aliado</th>
+                        <th scope="col">Precio</th>
                         <th scope="col">Categoría</th>
                         <th scope="col">Opciones</th>
                     </tr>
@@ -52,6 +53,9 @@ Categorias
                         </td>
                         <td>
                             {{ $item->aliado->nombre }}
+                        </td>
+                        <td>
+                            {{ $item->precio }}
                         </td>
                         <td>
                             {{ $item->categoria->nombre }}

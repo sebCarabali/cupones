@@ -76,6 +76,12 @@
                             </div>
                         </div>
                         <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="precio">Precio</label>
+                            <input type="text" name="precio" value="{{ old('precio') }}" id="precio" placeholder="$120.000" required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="condiciones">Condiciones</label>
                                 <textarea name="condiciones" id="condiciones" placeholder="Escriba las condiciones de este cupón"

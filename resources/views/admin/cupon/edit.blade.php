@@ -10,7 +10,7 @@
                     <li>
                         <a href="{{ route('admin.cupon.index') }}">Ver todos</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="{{ route('admin.cupon.new') }}">Registrar</a>
                     </li>
                 </ul>
@@ -22,7 +22,7 @@
                     Registrar nuevo aliado
                 </div>
                 <div class="frm-body">
-                    <form action="{{ route('admin.cupon.new') }}" method="post">
+                    <form action="{{ action('Admin\CuponController@doEditar', $cupon->id) }}" method="post">
                         @foreach ($errors->all() as $err)
                         <p class="alert alert-danger">
                             {{ $err }}
@@ -52,7 +52,7 @@
                                 <select name="categoria" id="categoria" class="form-control">
                                     @foreach ($categorias as $item)
                                     <option value="{{ $item->id }}" @if($item->id == $cupon->categoria->id)
-                                            selected @endif>
+                                        selected @endif>
                                         {{ $item->nombre }}
                                     </option>
                                     @endforeach
@@ -75,6 +75,13 @@
                                     </option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="precio">Precio</label>
+                                <input type="text" name="precio" value="{{ $cupon->precio }}" id="precio" placeholder="120000"
+                                    required class="form-control">
                             </div>
                         </div>
                         <div class="form-row">

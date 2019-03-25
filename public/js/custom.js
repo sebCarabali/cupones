@@ -11,10 +11,7 @@ $(function() {
         var count = $(this);
         $(this).countdown({
             zeroCallback: function(options) {
-                var newDate = new Date(),
-                    newDate = newDate.setHours(newDate.getHours() + 130);
-
-                $(count).attr("data-countdown", newDate);
+                $(count).attr("data-countdown", $(count).attr('data-countdown'));
                 $(count).countdown({
                     unixFormat: true
                 });
@@ -22,8 +19,6 @@ $(function() {
         });
     });
 });
-
-$('.datepicker').datepicker();
 
 
 // Bootstrap carousel

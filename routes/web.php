@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('inicio');
-});
+Route::get('/', 'InicioController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'InicioController@index')->name('home');
 
 # Aliados
 Route::get('/aliados/index', 'Admin\AliadosController@index')->name('aliados.index');
@@ -46,4 +44,9 @@ Route::get('/admin/cupon/index', 'Admin\CuponController@index')->name('admin.cup
 Route::get('/admin/cupon/new', 'Admin\CuponController@showFrmRegistro')->name('admin.cupon.new');
 Route::post('/admin/cupon/new', 'Admin\CuponController@doRegistro')->name('admin.cupon.new');
 Route::get('/admin/cupon/edit/{id}', 'Admin\CuponController@showFrmEditar')->name('admin.cupon.edit');
+Route::post('/admin/cupon/edit/{id}', 'Admin\CuponController@doEditar')->name('admin.cupon.edit');
 
+# Cupones usuario
+Route::get('/vercupon/{id}', 'InicioController@loadCupon');
+Route::get('/cupon/comprar/{id}', 'User\CuponController@comprar');
+Route::post('/cupon/comprar/{id}', 'User\CuponController@doComprar');

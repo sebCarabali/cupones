@@ -15,7 +15,7 @@
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="/css/boostrap.css">
     <!-- Font Awesome styles (icons) -->
-    <!--<link rel="stylesheet" href="/css/font_awesome.css">-->
+    <link rel="stylesheet" href="/css/font_awesome.css">
     <link rel="stylesheet" href="/css/all.css">
     <!-- Main Template styles -->
     <link rel="stylesheet" href="/css/styles.css">
@@ -112,7 +112,7 @@
                     <div class="col-md-12">
                         <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                         <nav>
-                            <ul class="nav nav-pills flexnav" id="flexnav" >
+                            <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800" >
                                 <li><a href="/">Inicio</a></li>
                                 @auth
                                 <!-- 
@@ -709,7 +709,7 @@
         <!-- Scripts queries -->
         <script src="/js/jquery.js"></script>
         <script src="/js/boostrap.min.js"></script>
-        <script src="/js/countdown.min.js"></script>
+        <script src="/js/countdown.js"></script>
         <script src="/js/flexnav.min.js"></script>
         <script src="/js/magnific.js"></script>
         <script src="/js/tweet.min.js"></script>
