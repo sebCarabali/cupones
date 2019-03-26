@@ -50,12 +50,10 @@
                     <div class="col-md-6 col-md-offset-4">
                         <div class="pull-right">
                             <ul class="login-register">
-
-                                <!--
                                     <li class="shopping-cart shopping-cart-white"><a href="page-cart.html"><i class="fa fa-shopping-cart"></i>My
                                             Cart</a>
                                         <div class="shopping-cart-box">
-                                            <ul class="shopping-cart-items">
+                                            <!--<ul class="shopping-cart-items">
                                                 <li>
                                                     <a href="product-shop-sidebar.html">
                                                         <img src="img/70x70.png" alt="Image Alternative text" title="AMaze" />
@@ -68,16 +66,16 @@
                                                         <h5>Playstation Accessories</h5><span class="shopping-cart-item-price">$170</span>
                                                     </a>
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                             <ul class="list-inline text-center">
-                                                <li><a href="page-cart.html"><i class="fa fa-shopping-cart"></i> View Cart</a>
+                                                <li><a href="{{route('cart.show')}}"><i class="fa fa-shopping-cart"></i> Ver carrito</a>
                                                 </li>
-                                                <li><a href="page-checkout.html"><i class="fa fa-check-square"></i>
-                                                        Checkout</a>
+                                                <li><a href="{{route('cupon.comprar')}}"><i class="fa fa-check-square"></i>
+                                                        Pagar</a>
                                                 </li>
                                             </ul>
                                         </div>
-                                    </li> -->
+                                    </li>
                                 @guest
                                 <li>
                                     <a href="{{ route('login') }}"><i class="fa fa-sign-in-alt"></i>  {{ __('Ingresar') }}</a>

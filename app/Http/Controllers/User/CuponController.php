@@ -11,6 +11,7 @@ use App\Compra;
 use App\Cliente;
 use App\Invitado;
 use App\DetalleCompra;
+use Illuminate\Support\Facades\Mail;
 
 class CuponController extends Controller
 {
@@ -27,10 +28,12 @@ class CuponController extends Controller
 
     public function doComprar(Request $request)
     {
+        $email = "";
         $cart = \Session::get('cart');
         $total = $this->total();
         if(Auth::check()) {
             $cliente = DB::table('clientes')->where('id_persona', '=', Auth::user()->id)->first();
+            $email = Auth::user()->email;
             $compra = Compra::create([
                 'id_cliente' => $cliente->id,
                 'total' => $total
@@ -40,7 +43,7 @@ class CuponController extends Controller
                 $this->saveDetalleCompra($item, $compra->id);
             }
         } else {
-            $invitado = Invitado::whereEmail($request->get('email'))->first();
+            $invitado = Invitado::whereIdentificacion($request->get('identificacion'))->first();
             if($invitado == NULL) {
                 $invitado = Invitado::create([
                     'email' => $request->get('email'),
@@ -49,7 +52,7 @@ class CuponController extends Controller
                     'identificacion' => $request->get('identificacion')
                 ]);
             }
-
+            $email = $invitado->email;
             $compra = Compra::create([
                 'id_invitado' => $invitado->id,
                 'total' => $total
@@ -59,6 +62,7 @@ class CuponController extends Controller
                 $this->saveDetalleCompra($item, $compra->id);
             }
         }
+        $this->_redimirCupon($cart, $email);
         \Session::forget('cart');
         return redirect(route('home'))
                 ->with('status','Compra realizada satisfactoriamente.');
@@ -82,5 +86,28 @@ class CuponController extends Controller
             $total += $item->precio * (1 - $item->porcentaje_descuento / 100) * $item->qty;
         }
         return $total;
+    }
+
+    private function _redimirCupon($cart, $email)
+    {
+        foreach($cart as $item)
+        {
+            $this->_enviarMail($item, $email);
+        }
+    }
+
+    private function _enviarMail($item, $email)
+    {
+        $data = array(
+            "cantidad" => $item->qty,
+            "titulo" => $item->titulo,
+            "descuento" => $item->porcentaje_descuento,
+            "precio" => $item->precio,
+            "aliado" => $item->aliado()->first()
+        );
+        Mail::send('mail.cupon.redimir', $data, function($message) use ($data, $email) {
+            $message->from('sebastiancc@unicauca.edu.co', 'Cuponia');
+            $message->to($email)->subject('Cupon');
+        });
     }
 }
