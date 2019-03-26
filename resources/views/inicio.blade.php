@@ -4,12 +4,18 @@ Inicio
 @endsection
 @section('contenido')
 <div class="container">
+        @if(session('status'))
+        <p class="alert alert-success">
+            {{ session('status') }}
+        </p>
+    @endif
     @if(count($cupones) == 0)
     <p class="h2">
         <i class="fa fa-arrows-alt"></i> No hay resultado para mostrar
     </p>
     @endif
     @foreach ($cupones as $item)
+    @if($item->cantidad > 0)
     <div class="col-md-4">
         <div class="product-thumb">
             <!--
@@ -54,6 +60,7 @@ Inicio
             </div>
         </div>
     </div>
+    @endif
     @endforeach
 </div>
 @endsection

@@ -49,6 +49,7 @@ Route::post('/admin/cupon/edit/{id}', 'Admin\CuponController@doEditar')->name('a
 # Cupones usuario
 Route::get('/vercupon/{id}', 'InicioController@loadCupon')->name('cupon.show');
 Route::get('/cupon/comprar/', 'User\CuponController@comprar')->name('cupon.comprar');
+Route::post('/cupon/comprar/', 'User\CuponController@doComprar')->name('cupon.comprar');
 
 # Carrito
 Route::get('/cart/index', 'CartController@show')->name('cart.show');

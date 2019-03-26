@@ -21,4 +21,9 @@ class Compra extends Model
     {
         return $this->belongsTo('App\Cliente', 'id_cliente');
     }
+
+    public function invitado()
+    {
+        return $this->belognsTo('App\Invitado', 'id_invitado');
+    }
 }
