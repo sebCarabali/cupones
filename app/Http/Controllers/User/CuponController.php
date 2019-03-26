@@ -13,16 +13,8 @@ class CuponController extends Controller
         #$this->middleware('guest');
     }
 
-    /**
-     * Load all my cupons
-    */
-    public function index() 
-    {
-
-    }
-
-    public function comprar($id) {
-        $cupon = Cupon::whereId($id)->firstOrFail();
-        return view('pay')->with(compact('cupon'));
+    public function comprar() {
+        $cart = \Session::get('cart');
+        return view('pay')->with(compact('cart'));
     }
 }

@@ -160,16 +160,24 @@ $('.i-check, .i-radio').iCheck({
     radioClass: 'i-radio'
 });
 
+$('.quantity-update').click(function(evt){
+    var id = $(this).data('id');
+    var href = $(this).data('href');
+    var qty = $("#item_" + id).val();
+    window.location.href = href + "/" + id + "/" + qty;
+});
 
+/*
 // Item quantity control (shopping cart)
 $(".cart-item-plus").click(function() {
     var currentVal = parseInt($(this).prev(".cart-quantity").val());
-
+    console.log(currentVal);
     if (!currentVal || currentVal == "" || currentVal == "NaN") currentVal = 0;
 
     $(this).prev(".cart-quantity").val(currentVal + 1);
 });
 
+*/
 $(".cart-item-minus").click(function() {
     var currentVal = parseInt($(this).next(".cart-quantity").val());
     if (currentVal == "NaN") currentVal = 0;

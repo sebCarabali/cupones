@@ -9,7 +9,7 @@ Cupon
             <div class="product-page-meta box">
                 <h4>{{ $cupon->titulo }}</h4>
                 <p>{{ str_limit($cupon->descripcion, 70) }}</p><a class="btn btn-primary btn-lg btn-block"
-                    href="{{ action('User\CuponController@comprar', $cupon->id) }}">${{ $cupon->precio - ($cupon->precio * $cupon->porcentaje_descuento / 100) }} Comprar</a>
+                    href="{{ route('cart.add', $cupon->id) }}">${{ $cupon->precio * (1 - $cupon->porcentaje_descuento / 100) }} Agregar al Carro</a>
                 <ul class="list product-page-meta-info">
                     <li>
                         <ul class="list product-page-meta-price-list">

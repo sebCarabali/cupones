@@ -5,7 +5,7 @@ Comprar
 @section('contenido')
 <div class="frm pay-form">
         <div class="frm-header">
-            Pago de cupon <small class="titulo-pago">({{ $cupon->titulo }})</small>
+            Pago de cupón
         </div>
     <form method="post" action="{{ action( "User\CuponController@doComprar" ,$cupon->id) }}">
         @csrf

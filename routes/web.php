@@ -47,6 +47,11 @@ Route::get('/admin/cupon/edit/{id}', 'Admin\CuponController@showFrmEditar')->nam
 Route::post('/admin/cupon/edit/{id}', 'Admin\CuponController@doEditar')->name('admin.cupon.edit');
 
 # Cupones usuario
-Route::get('/vercupon/{id}', 'InicioController@loadCupon');
-Route::get('/cupon/comprar/{id}', 'User\CuponController@comprar');
-Route::post('/cupon/comprar/{id}', 'User\CuponController@doComprar');
+Route::get('/vercupon/{id}', 'InicioController@loadCupon')->name('cupon.show');
+Route::get('/cupon/comprar/', 'User\CuponController@comprar')->name('cupon.comprar');
+
+# Carrito
+Route::get('/cart/index', 'CartController@show')->name('cart.show');
+Route::get('/cupon/addCarrito/{id}', 'CartController@add')->name('cart.add');
+Route::get('/cupon/updateCarrito/{id}/{qty}', 'CartController@update')->name('cart.update');
+Route::get('/cupon/deleteCarrito/{id}', 'CartController@delete')->name('cart.delete');
