@@ -103,7 +103,8 @@ class CuponController extends Controller
             "titulo" => $item->titulo,
             "descuento" => $item->porcentaje_descuento,
             "precio" => $item->precio,
-            "aliado" => $item->aliado()->first()
+            "aliado" => $item->aliado()->first(),
+            "vence" => $item->fecha_caducidad
         );
         Mail::send('mail.cupon.redimir', $data, function($message) use ($data, $email) {
             $message->from('sebastiancc@unicauca.edu.co', 'Cuponia');

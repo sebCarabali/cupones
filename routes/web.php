@@ -56,3 +56,13 @@ Route::get('/cart/index', 'CartController@show')->name('cart.show');
 Route::get('/cupon/addCarrito/{id}', 'CartController@add')->name('cart.add');
 Route::get('/cupon/updateCarrito/{id}/{qty}', 'CartController@update')->name('cart.update');
 Route::get('/cupon/deleteCarrito/{id}', 'CartController@delete')->name('cart.delete');
+Route::post('/comentario', 'InicioController@doComentario')->name('comentario');
+Route::get('/comentario', 'InicioController@comentario')->name('comentario');
+
+# Compras
+Route::get('/admin/compra/show', 'Admin\ComprasController@show')->name('admin.compra.show');
+Route::get('/admin/compra/detalle/{idCompra}', 'Admin\ComprasController@showDetalle')->name('admin.compra.detalle');
+
+# Busqueda
+Route::get('/search', 'InicioController@search')->name('busqueda');
+Route::get('/search/{idCategoria}', 'InicioController@filter')->name('filter');

@@ -346,6 +346,10 @@ $('.popup-image').magnificPopup({
     type: 'image'
 });
 
+$("#range-prince").on('change', function(evt){
+    $("#range-value-prince").html("$20000");
+});
+
 $(window).load(function() {
     if ($(window).width() > 992) {
         $('#masonry').masonry({

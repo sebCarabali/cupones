@@ -112,6 +112,7 @@
                         <nav>
                             <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800" >
                                 <li><a href="/">Inicio</a></li>
+                               
                                 @auth
                                 <!-- 
                                     @if(Auth::user()->cliente != null)
@@ -125,8 +126,11 @@
                                 <li><a href="{{ route('admin.disenador.index') }}">Administrar diseñadores</a></li>
                                 <li><a href="{{ route('admin.categoria.index') }}">Administrar categorias</a></li>
                                 <li><a href="{{ route('admin.cupon.index') }}">Administrar cupones</a></li>
+                                <li><a href="{{ route('admin.compra.show') }}">Administrar compras</a></li> 
                                 @endif
                                 @endauth
+                                <li><a href="{{route('comentario')}}">Contactanos</a></li>
+                                <li><a href="{{route('busqueda')}}">Search</a></li>
                             </ul>
                         </nav>
                     </div>
